@@ -5,7 +5,7 @@ int main(void)
 	int nrj_i, nrj_j, nrj_c;
 
 	//code
-	printf("/n/n");
+	printf("\n\n");
 
 	nrj_i = 0;
 	while(nrj_i < 64) 
@@ -20,9 +20,9 @@ int main(void)
 
 			nrj_c = ((nrj_i & 0x8) == 0) ^ ((nrj_j & 0x8) == 0);
 			if (nrj_c == 0)
-				printf(" ");
+				printf("  ");
 			if (nrj_c == 1)
-				printf("*");
+				printf("* ");
 			
 			nrj_j++;
 		}
