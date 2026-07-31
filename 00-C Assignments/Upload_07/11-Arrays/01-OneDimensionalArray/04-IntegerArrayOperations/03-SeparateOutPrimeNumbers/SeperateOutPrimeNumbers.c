@@ -8,18 +8,19 @@ int main(int args[], int* argv[], int* envp[])
 	//variable declarations
 	int nrjiArray[NUM_ELEMENTS];
 	int nrji, nrjnum;
-	int nrjsum = 0;
+	int nrjj, nrjcount = 0;
 
 	//code
 
 	printf("\n\n");
+
 	//***ARRAY ELEMENTS INPUT****
-	printf("Enter Integer Elements for Array:\n");
+	printf("Enter  Elements for Array:\n");
 	for (int nrji = 0; nrji < NUM_ELEMENTS; nrji++)
 	{
 		scanf("%d", &nrjnum);
 		if (nrjnum < 0)
-			nrjnum = nrjnum * -1;
+			nrjnum = nrjnum * ( - 1);
 		nrjiArray[nrji] = nrjnum;
 	}
 
@@ -27,23 +28,28 @@ int main(int args[], int* argv[], int* envp[])
 
 	printf("\n\n");
 
-	//***SEPARATING OUT EVEN NUMBERS FROM ARRAY ELEMENTS
-	printf("Even Numbers Amongst the Array Elements are \n\n");
+	//*****PRINTING ENTIRE ARRAY *****
+	printf("\n\n");
+	printf("Array Elements Are : \n\n");
+	for (nrji = 0; nrji < NUM_ELEMENTS; nrji++)
+		printf("%d\n",nrjiArray[nrji]);
+
+			//***SEPARATING OUT EVEN NUMBERS FROM ARRAY ELEMENTS
+		printf(" Prime Numbers Amongst the Array Elements are \n\n");
 	for (int nrji = 0; nrji < NUM_ELEMENTS; nrji++)
 	{
-		if ((nrjiArray[nrji] % 2) == 0)
-			printf("%d\n", nrjiArray[nrji]);
+		for (int nrjj = 1; nrjj <= nrjiArray[nrji]; nrjj++)
+		{
+			if ((nrjiArray[nrji] % nrjj) == 0)
+				nrjcount++;
+		}
 
-	}
+	
 
-	//***SEPARATING OUT ODD NUMBERS FROM ARRAY ELEMENTS
-	printf("ODD Numbers Amongst the Array Elements are \n\n");
-	for (int nrji = 0; nrji < NUM_ELEMENTS; nrji++)
-	{
-		if ((nrjiArray[nrji] % 2) != 0)
-			printf("%d\n", nrjiArray[nrji]);
-
-	}
+	           if (nrjcount == 2)
+		        printf( "%d\n",nrjiArray[nrji]);
+  			         nrjcount = 0;
+    }
 
 
 	return(0);

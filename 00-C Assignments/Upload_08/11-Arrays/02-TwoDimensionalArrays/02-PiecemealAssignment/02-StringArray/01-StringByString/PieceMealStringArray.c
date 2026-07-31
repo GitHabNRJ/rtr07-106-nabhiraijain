@@ -8,7 +8,7 @@ int main(int args[], int* argv[], int* envp[])
 {
 
 	//function prototype
-	int MyStrelen(char str[]);
+	int MyStrlen(char str[]);
 	void MyStrcpy(char[], char[]);
 
 
@@ -43,27 +43,27 @@ int main(int args[], int* argv[], int* envp[])
 	int i, j;
 	//code
 
-
+	printf("\n");
 
 	nrjchar_size = sizeof(char);
 	nrjstrArray_size = sizeof(nrjstrArray);
-
-	nrjstrArray_num_elements = nrjstrArray_size / nrjchar_size;
+	printf("Size of  (2D) Character Array is %d\n\n", nrjstrArray_size);
 
 	nrjstrArray_num_rows = nrjstrArray_size / sizeof(nrjstrArray[0]);
+	printf("No of rows in (2D) String Array is %d\n\n", nrjstrArray_num_rows);
 
 	nrjstrArray_num_columns = nrjstrArray_size / (nrjstrArray_num_rows * nrjchar_size);
+	printf("No of columns in (2D) String Array is %d\n\n", nrjstrArray_num_columns);
 
+	nrjstrArray_num_elements = nrjstrArray_size / nrjchar_size;
+	printf("Number of elements in Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_num_elements);
+	
 
 
 	printf("\n");
 
-	printf("Size of  (2D) Character Array is %d\n\n", nrjchar_size);
-	printf("Size of Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_size);
-    printf("Number of elements in Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_num_elements);
-    printf("No of rows in (2D) String Array is %d\n\n", nrjstrArray_num_rows);
-   printf("No of columns in (2D) String Array is %d\n\n", nrjstrArray_num_columns);
-
+	
+	
 
 	/***********Piece Meal Assignment********/
 
@@ -74,13 +74,13 @@ int main(int args[], int* argv[], int* envp[])
 	MyStrcpy(nrjstrArray[4],"Jain");
 
 
-	//printf("String In the 2D Array using Nested Loops:\n");
+	printf("The String In the 2D Character Array are :\n \n");
 
 
-	for (j = 0; j < nrjstrArray_num_rows; j++)
+	for (i = 0; i < nrjstrArray_num_rows; i++)
 	{
 
-		printf("nrjstrArray[%d]=%s\n", j, nrjstrArray[j]);
+		printf("%s ", nrjstrArray[i]);
 
 
 	}
@@ -92,26 +92,26 @@ int main(int args[], int* argv[], int* envp[])
 
 }//end of main function 
 
-void MyStrcpy(char strdestin[], char  strsrc[])
+void MyStrcpy(char str_destination[], char  str_source[])
 {
 	int MyStrelen(char[]);
-	int strlength = 0;
+	int iStrLength = 0;
 	int i;
-	strlength = MyStrelen(strsrc);
+	iStrLength = MyStrlen(str_source);
 	//printf("%d", strlength);
-	for (i = 0; i < strlength; i++)
+	for (i = 0; i < iStrLength; i++)
 	{
 
-		strdestin[i] = strsrc[i];
+		str_destination[i] = str_source[i];
 
 	}
-	strdestin[i] = '\0';
+	str_destination[i] = '\0';
 
-	//printf("%s", strdestin);
+
 
 }//end of MyStrCpy Method 
 
-int MyStrelen(char str[])
+int MyStrlen(char str[])
 {
 	int nrjj;
 	int strlen = 0;

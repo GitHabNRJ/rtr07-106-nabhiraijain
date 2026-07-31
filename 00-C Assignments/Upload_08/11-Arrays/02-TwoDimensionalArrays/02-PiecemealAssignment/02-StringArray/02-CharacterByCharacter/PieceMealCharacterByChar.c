@@ -8,8 +8,8 @@ int main(int args[], int* argv[], int* envp[])
 {
 
 	//function prototype
-	int MyStrelen(char str[]);
-	void MyStrcpy(char[], char[]);
+	int MyStrlen(char str[]);
+
 
 
 	//variable declarations
@@ -43,27 +43,29 @@ int main(int args[], int* argv[], int* envp[])
 	int i, j;
 	//code
 
-
+	printf("\n");
 
 	nrjchar_size = sizeof(char);
-	nrjstrArray_size = sizeof(nrjstrArray);
+	printf("Size of  (2D) Character Array is %d\n\n", nrjchar_size);
 
-	nrjstrArray_num_elements = nrjstrArray_size / nrjchar_size;
+	nrjstrArray_size = sizeof(nrjstrArray);
+	printf("Size of Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_size);
+
 
 	nrjstrArray_num_rows = nrjstrArray_size / sizeof(nrjstrArray[0]);
+	printf("No of Rows(Strings) In Two Dimentional (2D) Charater Array(String Array) is %d\n\n", nrjstrArray_num_rows);
+
 
 	nrjstrArray_num_columns = nrjstrArray_size / (nrjstrArray_num_rows * nrjchar_size);
+	printf("No of Columns(Strings) In Two Dimentional (2D) Charater Array(String Array) is %d\n\n", nrjstrArray_num_columns);
+
+
+	nrjstrArray_num_elements = nrjstrArray_num_rows / nrjstrArray_num_columns;
+	printf("Maximum Number of Elements(Characters) in Two Dimentional(2D) Character Array(String Array) is= %d\n\n", nrjstrArray_num_elements);
 
 
 
 	printf("\n");
-
-	printf("Size of  (2D) Character Array is %d\n\n", nrjchar_size);
-	printf("Size of Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_size);
-	printf("Number of elements in Two Dimentional(2D) String Array is %d\n\n", nrjstrArray_num_elements);
-	printf("No of rows in (2D) String Array is %d\n\n", nrjstrArray_num_rows);
-	printf("No of columns in (2D) String Array is %d\n\n", nrjstrArray_num_columns);
-
 
 	/***********Piece Meal Assignment********/
 	//******************Row1************************/
@@ -88,7 +90,7 @@ int main(int args[], int* argv[], int* envp[])
 	nrjstrArray[3][4]='i';
 	nrjstrArray[3][5]='r';
 	nrjstrArray[3][6]='a';
-	nrjstrArray[3][7]='I';
+	nrjstrArray[3][7]='i';
 	nrjstrArray[3][8] = '\0';
 
 	//******************Row5************************/
@@ -98,13 +100,14 @@ int main(int args[], int* argv[], int* envp[])
 	nrjstrArray[4][3]='n';
 	nrjstrArray[4][4] = '\0';
 
-	//printf("String In the 2D Array using Nested Loops:\n");
+	
+	printf("String In the 2D Character Array Is:\n\n");
 
 
 	for (j = 0; j < nrjstrArray_num_rows; j++)
 	{
 
-		printf("nrjstrArray[%d]=%s\n", j, nrjstrArray[j]);
+		printf("%s ", nrjstrArray[j]);
 
 
 	}
@@ -116,24 +119,7 @@ int main(int args[], int* argv[], int* envp[])
 
 }//end of main function 
 
-void MyStrcpy(char strdestin[], char  strsrc[])
-{
-	int MyStrelen(char[]);
-	int strlength = 0;
-	int i;
-	strlength = MyStrelen(strsrc);
-	//printf("%d", strlength);
-	for (i = 0; i < strlength; i++)
-	{
 
-		strdestin[i] = strsrc[i];
-
-	}
-	strdestin[i] = '\0';
-
-	//printf("%s", strdestin);
-
-}//end of MyStrCpy Method 
 
 int MyStrelen(char str[])
 {

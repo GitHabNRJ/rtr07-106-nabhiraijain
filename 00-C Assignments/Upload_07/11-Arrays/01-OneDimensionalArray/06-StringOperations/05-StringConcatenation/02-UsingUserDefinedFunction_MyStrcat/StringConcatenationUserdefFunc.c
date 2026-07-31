@@ -39,14 +39,19 @@ int main(int args, int* argv[], int* envp)
 
 	gets(nrjchArray_Two, MAX_STRING_LENGTH);
 
-	//*************String Output**************************
-	//printf("\n\n");
-	//printf("The 1st String 'nrjchArray_One[]' Entered by You Is:\n\n");
-	//printf("%s\n", nrjchArray_One);
+	//***
+	
 
-	//rintf("\n\n");
-	//printf("The 2nd String 'nrjchArray_Original[]' Entered by You Is:\n\n");
-	//printf("%s\n", nrjchArray_Two);
+	//*************String CONCAT**************************
+	printf("\n\n");
+	printf("***********BEFORE CONCATENATION ********************");
+	printf("\n\n");
+    printf("The Original First String Entered By You (i:e : 'nrjchArray_One[]')  Is:\n\n");
+	printf("%s\n", nrjchArray_One);
+
+	printf("\n\n");
+	printf("The  Original 2nd String Entered By You (i:e  'nrjchArray_Original[]' ) Is:\n\n");
+	printf("%s\n", nrjchArray_Two);
 
 	/*************String Concatenate*****************/
 
@@ -55,56 +60,52 @@ int main(int args, int* argv[], int* envp)
 
 	printf("\n\n");
 	/***************String after concatenation***************/
+	printf("\n\n");
 
-	//rintf("The 1st String 'nrjchArray_One[]' After concatenation Is:\n\n");
-	//printf("%s\n",nrjchArray_One);
+	printf("The 1st String 'nrjchArray_One[]' After concatenation Is:\n\n");
+	printf("%s\n",nrjchArray_One);
 
-	//rintf("\n\n");
-	//printf("The 2nd String 'nrjchArray_Original[]' After concatenation   Is:\n\n");
-	//printf("%s\n",nrjchArray_Two);
+	printf("\n\n");
+	printf("The 2nd String 'nrjchArray_Original[]' After concatenation   Is:\n\n");
+	printf("%s\n",nrjchArray_Two);
 	return(0);
 
 }//end of main function
 
 
-void MyStrConc(char nrjchArray_One1[], char nrjchArray_Two2[])
+void MyStrConc(char nrjstr_destination[], char nrjstr_source[])
 {
 
-	int strlen1 = 0, strlen2 = 0;
+	int MyStrlen(char str[]);
+
+	int iStringLength_Source = 0;
+	int iStringLenght_Destination = 0;
 	int i, j;
 
-	strlen1 = MyStrelen(nrjchArray_One1);
-	strlen2 = MyStrelen(nrjchArray_Two2);
+	iStringLength_Source = MyStrelen(nrjstr_source);
+	iStringLenght_Destination = MyStrelen(nrjstr_destination);
 
 	
 
 	printf("\n\n");
 
-	printf("The Length of 1st String=%d\n",strlen1);
-	printf("The Lenght of 2nd String=%d\n", strlen2);
+	printf("The Length of 1st String=%d\n", iStringLength_Source);
+	printf("The Lenght of 2nd String=%d\n", iStringLenght_Destination);
 
 	printf("\n\n");
 
-	//for (i = strlen2, j = 0; j < strlen1; i++, j++)
-	//{
 
-		//nrjchArray_Two2[i] = nrjchArray_One1[j];
-		//printf("%s\n", nrjchArray_Two2);
-	//}
-
-	for (i = strlen1,j=0 ;j < strlen2; i++,j++)
+	for (i = iStringLenght_Destination,j=0 ;j < iStringLength_Source; i++,j++)
 	{
-		nrjchArray_One1[i] = nrjchArray_Two2[j];
-		printf("%s\n", nrjchArray_One1);
+		nrjstr_destination[i] = nrjstr_source[j];
+		
 
 	}
 
 	//nrjchArray_Two2[i]= '\0';
-	nrjchArray_One1 [i] = '\0';
+	nrjstr_destination[i] = '\0';
 
-	printf("The 1st String 'nrjchArray_One[]' After concatenation Is:\n");
-	//printf("%s\n", nrjchArray_Two2);
-	printf("%s\n", nrjchArray_One1);
+
 
 }//end of MyStrConc
 
