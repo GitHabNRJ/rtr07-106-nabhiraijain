@@ -3,17 +3,24 @@
 int main(int args[], int* argv[], int* envp[])
 {
 	//variable declarations
-	int fnrjArray[10];
-	int fnrj;
+	float fnrjArray[10];
+	int inrj;
 
 	//code
-	for (fnrj = 0; fnrj < 10; fnrj++)
-		fnrjArray[fnrj] = (float)(fnrj + 1) * 3.0f;
+	for (inrj = 0; inrj < 10; inrj++)
+		fnrjArray[inrj] = (float)(inrj + 1) * 1.5f;
 
-	printf("Elements of the Integer Array : & address:\n");
-	for (fnrj = 0; fnrj < 10; fnrj++)
+	printf("\n\n");
+	printf("Elements of the 'float' Array:\n\n");
+	for (inrj = 0; inrj < 10; inrj++)
+		printf("fnrjArray[%d]=%f\n", inrj, fnrjArray[inrj]);
+
+	
+	printf("\n\n");
+	printf("Elements of the 'Float' Array: & Addresses \n\n");
+	for (inrj = 0; inrj < 10; inrj++)
 	{
-		printf("inrjArray[%d]=%d \t\t Address=%p\n", fnrj, fnrjArray[fnrj], &fnrjArray[fnrj]);
+		printf("fnrjArray[%d]=%f \t\t Address=%p\n", inrj, fnrjArray[inrj], &fnrjArray[inrj]);
 	}
 	printf("\n\n");
 

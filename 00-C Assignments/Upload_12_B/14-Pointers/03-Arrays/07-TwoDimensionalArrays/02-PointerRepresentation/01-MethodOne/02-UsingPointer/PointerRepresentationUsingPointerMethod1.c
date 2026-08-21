@@ -22,19 +22,21 @@ int main(int args[], int* argv[], int* envp[])
 			*(ptr_iArray_Row + j) = (i + 1) * (j + 1);
 		}
 	}
+
+	printf("\n\n");
+	printf("2D Integer Array Elements along with Addresses:\n\n");
 	//********Display user-input values of 2-D Array 
 	for (i = 0; i < NUM_ROWS; i++)
 	{
+		
+		ptr_iArray_Row = inrjArray[i];
 		for (j = 0; j < NUM_COLUMNS; j++)
 		{
-			printf("{*(ptr_iArray_Row+%d)=%d,  at Add:=%p}", j, *(ptr_iArray_Row + j), (ptr_iArray_Row + j));
-			printf("\t\t");
+			printf("*(ptr_iArray_Row + %d)=%d \t \t  At Address (ptr_iArray_Row + j):%p\n", j, *(ptr_iArray_Row + j), (ptr_iArray_Row + j));
+			
 		}
 		printf("\n\n");
 	}
-	printf("\n\n");
-
-
 
 	return(0);
 

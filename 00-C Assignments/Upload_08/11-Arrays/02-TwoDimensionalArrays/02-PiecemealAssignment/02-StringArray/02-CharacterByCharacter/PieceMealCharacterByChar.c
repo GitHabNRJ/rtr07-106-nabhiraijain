@@ -60,7 +60,7 @@ int main(int args[], int* argv[], int* envp[])
 	printf("No of Columns(Strings) In Two Dimentional (2D) Charater Array(String Array) is %d\n\n", nrjstrArray_num_columns);
 
 
-	nrjstrArray_num_elements = nrjstrArray_num_rows / nrjstrArray_num_columns;
+	nrjstrArray_num_elements = nrjstrArray_num_rows * nrjstrArray_num_columns;
 	printf("Maximum Number of Elements(Characters) in Two Dimentional(2D) Character Array(String Array) is= %d\n\n", nrjstrArray_num_elements);
 
 
