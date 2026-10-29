@@ -1,0 +1,3 @@
+Program Started Successfully:
+WinMain():Innitialize()  funtion() completed successfully:
+Program Terminated Successfully:

@@ -1,0 +1,9 @@
+Program Started Successfully:
+OPENGL Information: 
+**********************
+OpenGL Vender : (null)
+OpenGL Renderer : Intel(R) Iris(R) Xe Graphics
+OpenGL Version : 4.6.0 - Build 32.0.101.7080
+**********************
+Initialize funtion() completed successfully:
+Program Terminated Successfully:
