@@ -9,7 +9,7 @@
 #include<gl/GLU.h>
 
 #include "OGL.h"
-
+#include <math.h>
 
 //OPENGL Related libraries 
 #pragma comment(lib,"opengl32.lib")     //preprocessor dirctories no semicolor
@@ -490,31 +490,32 @@ return((int)msg.wParam);
 		//Set ToIdentity Matrix 
 		glLoadIdentity();
 
-		float l =
-		float r = 
+		float n = 0.1f;
+		float f = 100.0f;
+		float fovy = 45.0f * 3.14159265f / 180.0f;
+		float aspect = (float)width / (float)height;
 
-		float b = 
-		float t = 
-
-		float n = 
-		float f = 
+		float t = n * tanf(fovy / 2.0f);
+		float b = -t;
+		float r = t * aspect;
+		float l = -r;
 
 		//Do Perspective Projection 
-		gluPerspective(45.0f,
-			(GLfloat)width /
-			(GLfloat)height,
-			0.1f,
-			100.0f);
+		//gluPerspective(45.0f,
+			//(GLfloat)width /
+			//(GLfloat)height,
+			//0.1f,
+			//100.0f);
 
 		//perspectiveMatrix Matrices
-		perspectiveMatrix[0] = 2n / (r - l);
+		perspectiveMatrix[0] = (2.0f * n) / (r - l);
 		perspectiveMatrix[1] = 0.0f;
 		perspectiveMatrix[2] = 0.0f;
 		perspectiveMatrix[3] = 0.0f;
 
 
 		perspectiveMatrix[4] = 0.0f;
-		perspectiveMatrix[5] = 2n / (t - b);
+		perspectiveMatrix[5] = (2.0f * n) / (t - b);
 		perspectiveMatrix[6] = 0.0f;
 		perspectiveMatrix[7] = 0.0f;
 
@@ -525,7 +526,7 @@ return((int)msg.wParam);
 
 		perspectiveMatrix[12] = 0.0f;
 		perspectiveMatrix[13] = 0.0f;
-		perspectiveMatrix[14] = -((2fn) / (f - n));
+		perspectiveMatrix[14] = -((2.0f* f * n) / (f - n));
 		perspectiveMatrix[15] = 0.0f;
 
 		glLoadMatrixf(perspectiveMatrix);
@@ -539,8 +540,6 @@ return((int)msg.wParam);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 
-		//Translate triangle backwards by z
-		glTranslatef(0.0f, 0.0f, -3.0f);
 
 
 		//SetMatrixToModuleViewMode
@@ -551,7 +550,9 @@ return((int)msg.wParam);
 
 		glLoadMatrixf(identityMatrix);
 
-		glMultMatrixf(perspectiveMatrix);
+
+		//Translate triangle backwards by z
+		glTranslatef(0.0f, 0.0f, -3.0f);
 
 
 		//Triangle Drawing Code 

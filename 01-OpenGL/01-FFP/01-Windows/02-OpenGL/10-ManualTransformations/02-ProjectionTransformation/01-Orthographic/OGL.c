@@ -63,7 +63,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
 	WNDCLASSEX wndclass;
 	HWND hwnd;
 	MSG msg;
-	TCHAR szAppName[] = TEXT("RTR6.0");
+	TCHAR szAppName[] = TEXT("RTR7.0");
 	BOOL bdone = FALSE;
 
 
