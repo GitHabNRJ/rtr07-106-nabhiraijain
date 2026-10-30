@@ -1,0 +1,7 @@
+Step1:Compile 
+cl.exe /c /EHsc /I "C:\Program Files (x86)\OCL_SDK_LIGHT\include" HelloOpenCL.c
+
+Step2:-Link 
+HelloOpenCL.obj OpenCL.lib /LIBPATH:"C:\Program Files (x86)\OCL_SDK_LIGHT\lib\x86_64" /SUBSYSTEM:CONSOLE 
+
+Step3: HelloOpenCL.exe 
